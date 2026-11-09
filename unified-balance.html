@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Balance | Arcle FX Docs</title>
+    <!-- Restore clean URL on docs.arclefx.com (strips /docs/ prefix and .html extension) -->
+    <script>
+    (function () {
+      if (window.location.hostname !== 'docs.arclefx.com') return;
+      var p = window.location.pathname;
+      if (!p.startsWith('/docs/')) return;
+      var slug = p.replace(/^\/docs\//, '').replace(/\.html$/, '');
+      history.replaceState(null, document.title, slug === 'index' ? '/' : '/' + slug);
+    })();
+    </script>
+    <link rel="icon" type="image/png" href="/center-logo.png" />
+    <!-- URL normalizer: remove extra trailing slashes -->
+    <script>
+    (function () {
+      var p = window.location.pathname;
+      var clean = p.replace(/\/+$/, '').replace(/\/{2,}/g, '/');
+      if (clean !== p) history.replaceState(null, document.title, clean || '/');
+    })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Plus Jakarta Sans','sans-serif']},colors:{circle:{blue:'#0055FF'},arc:{bg:'#070a11',surface:'rgba(18,24,39,0.65)','surface-light':'rgba(30,41,59,0.5)',teal:'#2dd4bf',purple:'#8b5cf6',gold:'#f59e0b',text:'#ffffff',muted:'#94a3b8',border:'rgba(255,255,255,0.08)','border-hover':'rgba(255,255,255,0.15)',blue:'#0E76FD'}}}}}</script>
+    <style>::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px}.dark ::-webkit-scrollbar-thumb{background:#334155}.glass-nav{background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E2E8F0}.dark .glass-nav{background:rgba(7,10,17,0.85);border-bottom:1px solid rgba(255,255,255,0.08)}.dark-bg-elements{display:none}.dark .dark-bg-elements{display:block}.bg-grid{position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(to right,rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:40px 40px;z-index:-2;mask-image:radial-gradient(ellipse at top,black 0%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse at top,black 0%,transparent 80%)}.ambient-light{position:fixed;border-radius:50%;filter:blur(150px);z-index:-1;opacity:.3;animation:pulse 12s infinite alternate ease-in-out}.light-teal{width:40vw;height:40vh;background:#2dd4bf;top:-10%;left:-10%}.light-purple{width:30vw;height:30vh;background:#8b5cf6;bottom:-10%;right:-10%;animation-delay:-5s}@keyframes pulse{0%{transform:scale(1) translate(0,0);opacity:.15}100%{transform:scale(1.1) translate(20px,-20px);opacity:.3}}aside::-webkit-scrollbar{display:none!important}aside{scrollbar-width:none;-ms-overflow-style:none}html{scroll-behavior:smooth}@keyframes pageEnter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}main{animation:pageEnter 0.25s ease forwards}.page-exit{opacity:0;transform:translateY(-6px);transition:opacity 0.15s ease,transform 0.15s ease}</style>
+</head>
+<body class="bg-white dark:bg-arc-bg text-slate-600 dark:text-arc-muted font-sans antialiased transition-colors duration-300 relative min-h-screen">
+    <div class="dark-bg-elements"><div class="bg-grid"></div><div class="ambient-light light-teal"></div><div class="ambient-light light-purple"></div></div>
+    <nav class="glass-nav fixed top-0 w-full z-50 h-16 flex items-center justify-between px-4 lg:px-8 transition-colors duration-300">
+        <div class="flex items-center"><a href="/" class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0"><img src="/center-logo.png" alt="Arcle FX" class="w-full h-full object-cover"/></div><span class="font-extrabold text-slate-900 dark:text-arc-text text-xl tracking-tight">Arcle FX Docs</span></a></div><div class="absolute left-1/2 -translate-x-1/2 hidden md:block"><button onclick="window.__arcleSearch&amp;&amp;window.__arcleSearch.open()" class="flex items-center bg-slate-100 dark:bg-arc-surface hover:bg-slate-200 dark:hover:bg-arc-surface-light transition-colors rounded-xl px-3 py-1.5 text-sm text-slate-500 dark:text-arc-muted w-64 cursor-pointer border border-transparent hover:border-slate-300 dark:border-arc-border shadow-sm"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>Search...<span class="ml-auto border border-slate-300 dark:border-arc-border rounded px-1.5 text-xs font-medium">⌘K</span></button></div>
+        <div class="flex items-center gap-4"><div class="w-px h-4 bg-slate-300 dark:bg-arc-border hidden sm:block"></div><button id="theme-toggle" class="text-slate-500 dark:text-arc-muted hover:text-slate-800 dark:hover:text-arc-text transition-colors p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-arc-surface-light border border-transparent dark:border-arc-border"><svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg><svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg></button></div>
+    </nav>
+    <div class="pt-16 max-w-[90rem] mx-auto flex justify-center relative z-10">
+        <aside class="hidden lg:block w-64 shrink-0 h-[calc(100vh-4rem)] sticky top-16 py-6 pr-4 pl-2 transition-colors duration-300" style="overflow-y:auto;scrollbar-width:none;-ms-overflow-style:none;">
+            <div class="mb-6 px-3"><h3 class="text-xs font-bold text-slate-900 dark:text-arc-text uppercase tracking-wider mb-3">Overview</h3><ul class="space-y-1"><li><a href="/" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Introduction to Arcle FX</a></li><li><a href="/why-arcle-fx" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Why Arcle FX?</a></li><li><a href="/supported-networks" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Supported Networks</a></li></ul></div>
+            <div class="mb-6 px-3"><h3 class="text-xs font-bold text-slate-900 dark:text-arc-text uppercase tracking-wider mb-3">Core Features</h3><ul class="space-y-1"><li><a href="/bridge" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Bridge</a></li><li><a href="/swap" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Swap</a></li><li><a href="/unified-balance" class="block px-3 py-2 text-sm text-circle-blue dark:text-arc-teal bg-blue-50 dark:bg-arc-teal/10 font-semibold rounded-lg transition-colors border border-transparent dark:border-arc-teal/20">Unified Balance</a></li><li><a href="/send-on-arc" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Send on ARC Network</a></li></ul></div>
+            
+            <div class="mb-6 px-3"><h3 class="text-xs font-bold text-slate-900 dark:text-arc-text uppercase tracking-wider mb-3">Resources</h3><ul class="space-y-1"><li><a href="/block-explorer" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Block Explorer</a></li></ul></div>
+            <div class="mb-6 px-3"><h3 class="text-xs font-bold text-slate-900 dark:text-arc-text uppercase tracking-wider mb-3">User Guide</h3><ul class="space-y-1"><li><a href="/connect-wallet" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Connect Wallet</a></li><li><a href="/transaction-settings" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Transaction Settings</a></li><li><a href="/circle-paymaster" class="block px-3 py-2 text-sm text-slate-600 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-text hover:bg-slate-50 dark:hover:bg-arc-surface-light rounded-lg transition-colors font-medium">Circle Paymaster</a></li></ul></div>
+        </aside>
+        <main class="flex-1 min-w-0 max-w-3xl px-6 py-10 lg:px-12">
+            <div class="flex items-center text-sm text-slate-500 dark:text-arc-muted mb-6 font-medium"><a href="/" class="hover:text-slate-900 dark:hover:text-arc-text transition-colors">Arcle FX Docs</a><svg class="w-4 h-4 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span class="text-slate-900 dark:text-arc-text">Unified Balance</span></div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-arc-text mb-4 tracking-tight">Unified Balance</h1>
+            <p class="text-lg text-slate-600 dark:text-arc-muted mb-10 leading-relaxed">View your total USDC balance aggregated across all chains and send it to any address in one click — powered by Circle CCTP. Protocol Fee: <strong class="text-slate-900 dark:text-arc-text">0.10%</strong>.</p>
+
+            <h2 id="what-is-unified-balance" class="text-2xl font-bold text-slate-900 dark:text-arc-text mb-4 mt-12 scroll-mt-24 group flex items-center">What is Unified Balance?<a href="#what-is-unified-balance" class="ml-2 opacity-0 group-hover:opacity-100 text-slate-400 dark:text-arc-muted hover:text-circle-blue dark:hover:text-arc-teal transition-opacity">#</a></h2>
+            <p class="text-slate-600 dark:text-arc-muted mb-6 leading-relaxed">Unified Balance aggregates your USDC holdings across Ethereum, Arbitrum, Base, and ARC Network into a single view. Instead of managing balances on four separate chains, you see one total — and can send from that total in a single transaction.</p>
+            <div class="p-6 border border-slate-200 dark:border-arc-border rounded-2xl bg-white dark:bg-arc-surface mb-12">
+                <div class="text-sm text-slate-500 dark:text-arc-muted mb-2 font-medium uppercase tracking-wider">Example</div>
+                <div class="space-y-2 mb-4">
+                    <div class="flex justify-between text-sm"><span class="text-slate-600 dark:text-arc-muted">Ethereum</span><span class="font-semibold text-slate-900 dark:text-arc-text">250 USDC</span></div>
+                    <div class="flex justify-between text-sm"><span class="text-slate-600 dark:text-arc-muted">Arbitrum</span><span class="font-semibold text-slate-900 dark:text-arc-text">500 USDC</span></div>
+                    <div class="flex justify-between text-sm"><span class="text-slate-600 dark:text-arc-muted">Base</span><span class="font-semibold text-slate-900 dark:text-arc-text">150 USDC</span></div>
+                    <div class="flex justify-between text-sm"><span class="text-slate-600 dark:text-arc-muted">ARC Network</span><span class="font-semibold text-slate-900 dark:text-arc-text">100 USDC</span></div>
+                    <div class="border-t border-slate-200 dark:border-arc-border pt-2 flex justify-between text-base"><span class="font-bold text-slate-900 dark:text-arc-text">Total Unified</span><span class="font-extrabold text-circle-blue dark:text-arc-teal">1,000 USDC</span></div>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-arc-muted">Send up to 1,000 USDC to any address — Arcle FX handles the routing automatically.</p>
+            </div>
+
+            <h2 id="how-it-works" class="text-2xl font-bold text-slate-900 dark:text-arc-text mb-4 mt-12 scroll-mt-24 group flex items-center">How It Works<a href="#how-it-works" class="ml-2 opacity-0 group-hover:opacity-100 text-slate-400 dark:text-arc-muted hover:text-circle-blue dark:hover:text-arc-teal transition-opacity">#</a></h2>
+            <ul class="space-y-4 mb-12">
+                <li class="flex items-start bg-slate-50 dark:bg-arc-surface-light p-4 rounded-xl border border-transparent dark:border-arc-border"><span class="flex-shrink-0 w-7 h-7 rounded-full bg-circle-blue dark:bg-arc-teal text-white flex items-center justify-center text-xs font-bold mr-3 mt-0.5">1</span><span class="text-slate-700 dark:text-arc-text">Connect your wallet. Arcle FX automatically reads your USDC balance on all 4 supported chains.</span></li>
+                <li class="flex items-start bg-slate-50 dark:bg-arc-surface-light p-4 rounded-xl border border-transparent dark:border-arc-border"><span class="flex-shrink-0 w-7 h-7 rounded-full bg-circle-blue dark:bg-arc-teal text-white flex items-center justify-center text-xs font-bold mr-3 mt-0.5">2</span><span class="text-slate-700 dark:text-arc-text">Enter the destination wallet address and the amount to send.</span></li>
+                <li class="flex items-start bg-slate-50 dark:bg-arc-surface-light p-4 rounded-xl border border-transparent dark:border-arc-border"><span class="flex-shrink-0 w-7 h-7 rounded-full bg-circle-blue dark:bg-arc-teal text-white flex items-center justify-center text-xs font-bold mr-3 mt-0.5">3</span><span class="text-slate-700 dark:text-arc-text">Arcle FX selects the optimal source chains, routes through CCTP, and delivers native USDC to the recipient.</span></li>
+            </ul>
+
+            <div class="border-t border-slate-200 dark:border-arc-border pt-8 mt-12 flex justify-between items-center">
+                <a href="/swap" class="group flex flex-col text-left"><span class="text-xs font-bold text-slate-500 dark:text-arc-muted mb-1 group-hover:text-slate-700 dark:group-hover:text-arc-text transition-colors uppercase tracking-wider">Previous</span><span class="text-base font-bold text-circle-blue dark:text-arc-teal group-hover:text-blue-700 dark:group-hover:text-teal-300 flex items-center transition-colors"><svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>Swap</span></a>
+                <a href="/send-on-arc" class="group flex flex-col text-right"><span class="text-xs font-bold text-slate-500 dark:text-arc-muted mb-1 group-hover:text-slate-700 dark:group-hover:text-arc-text transition-colors uppercase tracking-wider">Next</span><span class="text-base font-bold text-circle-blue dark:text-arc-teal group-hover:text-blue-700 dark:group-hover:text-teal-300 flex items-center transition-colors">Send on ARC Network<svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span></a>
+            </div>
+        </main>
+        <aside class="hidden xl:block w-64 shrink-0 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto py-10 pl-4 pr-2"><h4 class="text-xs font-bold text-slate-900 dark:text-arc-text uppercase tracking-wider mb-4">On this page</h4><ul class="space-y-3 text-sm font-medium"><li><a href="#what-is-unified-balance" class="text-slate-500 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-teal transition-colors block">What is Unified Balance?</a></li><li><a href="#how-it-works" class="text-slate-500 dark:text-arc-muted hover:text-slate-900 dark:hover:text-arc-teal transition-colors block">How It Works</a></li></ul></aside>
+    </div>
+    <script>const t=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon');if(localStorage.getItem('color-theme')==='dark'||(!('color-theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');l.classList.remove('hidden')}else{document.documentElement.classList.remove('dark');d.classList.remove('hidden')}t.addEventListener('click',function(){d.classList.toggle('hidden');l.classList.toggle('hidden');if(document.documentElement.classList.contains('dark')){document.documentElement.classList.remove('dark');localStorage.setItem('color-theme','light')}else{document.documentElement.classList.add('dark');localStorage.setItem('color-theme','dark')}})</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var links = document.querySelectorAll("a[href^='/']:not([href^='http']):not([href^='#'])");
+  links.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var href = this.getAttribute("href");
+      if (href && !href.includes("#")) {
+        e.preventDefault();
+        var m = document.querySelector("main");
+        if (m) {
+          m.style.opacity = "0";
+          m.style.transform = "translateY(-6px)";
+          m.style.transition = "opacity 0.15s ease, transform 0.15s ease";
+        }
+        setTimeout(function () { window.location.href = href; }, 150);
+      }
+    });
+  });
+});
+</script>
+<script src="/search.js"></script>
+</body>
+</html>
