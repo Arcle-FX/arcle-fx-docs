@@ -1,0 +1,98 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "Static docs site — no build needed"
+  artifacts:
+    baseDirectory: /
+    files:
+      - '**/*'
+  customRules:
+    - source: /why-arcle-fx/
+      target: /why-arcle-fx
+      status: '301'
+    - source: /supported-networks/
+      target: /supported-networks
+      status: '301'
+    - source: /bridge/
+      target: /bridge
+      status: '301'
+    - source: /swap/
+      target: /swap
+      status: '301'
+    - source: /unified-balance/
+      target: /unified-balance
+      status: '301'
+    - source: /send-on-arc/
+      target: /send-on-arc
+      status: '301'
+    - source: /block-explorer/
+      target: /block-explorer
+      status: '301'
+    - source: /connect-wallet/
+      target: /connect-wallet
+      status: '301'
+    - source: /transaction-settings/
+      target: /transaction-settings
+      status: '301'
+    - source: /circle-paymaster/
+      target: /circle-paymaster
+      status: '301'
+    - source: /smart-contracts/
+      target: /smart-contracts
+      status: '301'
+    - source: /token-addresses/
+      target: /token-addresses
+      status: '301'
+    - source: /cctp-gateway/
+      target: /cctp-gateway
+      status: '301'
+    - source: /app-kits-sdk/
+      target: /app-kits-sdk
+      status: '301'
+    - source: /why-arcle-fx
+      target: /why-arcle-fx.html
+      status: '200'
+    - source: /supported-networks
+      target: /supported-networks.html
+      status: '200'
+    - source: /bridge
+      target: /bridge.html
+      status: '200'
+    - source: /swap
+      target: /swap.html
+      status: '200'
+    - source: /unified-balance
+      target: /unified-balance.html
+      status: '200'
+    - source: /send-on-arc
+      target: /send-on-arc.html
+      status: '200'
+    - source: /block-explorer
+      target: /block-explorer.html
+      status: '200'
+    - source: /connect-wallet
+      target: /connect-wallet.html
+      status: '200'
+    - source: /transaction-settings
+      target: /transaction-settings.html
+      status: '200'
+    - source: /circle-paymaster
+      target: /circle-paymaster.html
+      status: '200'
+    - source: /smart-contracts
+      target: /smart-contracts.html
+      status: '200'
+    - source: /token-addresses
+      target: /token-addresses.html
+      status: '200'
+    - source: /cctp-gateway
+      target: /cctp-gateway.html
+      status: '200'
+    - source: /app-kits-sdk
+      target: /app-kits-sdk.html
+      status: '200'
+    - source: /<*>
+      target: /index.html
+      status: '200'
